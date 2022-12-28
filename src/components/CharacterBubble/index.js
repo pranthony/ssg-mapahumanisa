@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import { FILE_BASE_URL } from '../../config/constants'
 /* 
@@ -30,7 +31,7 @@ const CharacterBubble = ({...character}) => {
     <div
         style={{ width: '100%', textAlign: 'center' }}
     >
-        <a href={`/humanista?id=${character.id}`} style={{ color: 'rgb(211, 93, 25)'}} >Ver mas</a>
+        <Link to={`/humanista?id=${character.id}`} >Ver mas</Link>
     </div>
     </div>
   )

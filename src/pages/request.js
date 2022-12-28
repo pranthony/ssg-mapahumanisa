@@ -1,7 +1,7 @@
 import React from 'react'
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../components/Layout';
 
 const RequestForm = () => {
     const form = useRef()

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import BASE_URL from '../config/constants'
 import MapaPeru from '../components/MapaPeru'
 import GalleryCharacters from '../components/galleryCharacters'
 import Layout from "../components/Layout"
+import { BASE_URL, FILE_BASE_URL } from "../config/constants"
 
 const IndexPage = () => {
 
@@ -13,11 +13,11 @@ const IndexPage = () => {
   useEffect(()=>{
     if(clicked) 
         fetch(BASE_URL+`/index.php/character/listByDepartment?name=${clicked}`)
-        .then(response=>response.json())
-        .then(data=>{
-            setCharacters(data)
-            setCharacter(data[Math.floor(Math.random()* data.length)])
-        })
+            .then(response=>response.json())
+            .then(data=>{
+                setCharacters(data)
+                setCharacter(data[Math.floor(Math.random()* data.length)])
+            })
   }, [clicked])
 
   const getDepartment = target => {
@@ -69,7 +69,7 @@ const IndexPage = () => {
                     <div className='flex flex-center'>
                         
 
-                    <a className='inline-block'  href="https://humanistas.lavaperu.com/static/brochure.pdf" target="_blank" rel="noreferrer">
+                    <a className='inline-block'  href={FILE_BASE_URL+"/static/brochure.pdf"} target="_blank" rel="noreferrer">
                         <button  className='flex' >
                         <span>Mas información</span>
                         <span className="material-symbols-outlined">

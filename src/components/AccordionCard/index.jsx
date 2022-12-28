@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Accordion  from '../../atoms/accordion'
-import BASE_URL, { FILE_BASE_URL } from '../../config/constants'
+import { BASE_URL, FILE_BASE_URL } from '../../config/constants'
 
 const AccordionCard = ({titulo, id, lugarPublicacion, fechaPublicacion, editorial, showTextContent, imgLink}) => {
     const [texts, setTexts] =  useState()

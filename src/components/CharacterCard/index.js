@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import { FILE_BASE_URL } from '../../config/constants'
 
@@ -26,7 +27,8 @@ const CharacterCard = ({...character}) => {
         <div
             style={{ width: '100%', paddingBottom: 20}}
         >
-            <a href={`/humanista?id=${character.id}`} >Ver mas</a>
+            <Link to={`/humanista?id=${character.id}`} >Ver mas</Link>
+
         </div>
     </div>
   )

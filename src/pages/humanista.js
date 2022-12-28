@@ -1,10 +1,11 @@
+
 import React from 'react'
 import { useEffect, useState } from "react";
 import Loader from "../atoms/loaders";
 import AccordionCard from "../components/AccordionCard";
 import Layout from '../components/Layout';
 import NotFound  from "../components/NotFound";
-import BASE_URL from "../config/constants";
+import {BASE_URL, FILE_BASE_URL} from "../config/constants";
 
 const Humanista = (props) =>{
 
@@ -16,6 +17,9 @@ const Humanista = (props) =>{
     
     const url = new URLSearchParams(props.location?.search)
     const paramId = url?.get('id')
+
+
+    
 
     useEffect(()=>{
         fetch(BASE_URL+'/index.php/character/get?id='+paramId)
@@ -53,7 +57,7 @@ const Humanista = (props) =>{
 
                             <div>
 
-                                <img style={{width:"250px", borderRadius:"10px"}} src={`https://humanistas.lavaperu.com/static/${info.linkImg}`} loading="lazy"/>
+                                <img style={{width:"250px", borderRadius:"10px"}} src={`${FILE_BASE_URL}/static/${info.linkImg}`} loading="lazy"/>
                             </div>
                             <div style={{ margin:12}}>
 
@@ -70,9 +74,9 @@ const Humanista = (props) =>{
                     </div>
                     <div id="textContent" >
                         {textContent &&
-                        <div style={{height:'100vh', overflowY: 'scroll', margin: '50px auto', border: '2px solid orange', padding: '30px 25px', borderRadius: '15px'}}>
+                        <div  style={{height:'100vh', overflowY: 'scroll', margin: '50px auto', border: '2px solid orange', padding: '30px 25px', borderRadius: '15px'}}>
                             { 
-                                textContent.map((e, i)=> <p key={i} style={{maxWidth: '700px', margin: '10px auto', textIndent: '40px '}}>{e}</p>)
+                                textContent.map((e, i)=> <p key={i} style={{  textIndent: ()=>i?'0px':'40px'}} className="margin-10-auto" dangerouslySetInnerHTML={{__html: e}}/>)
                             }
                         </div>           
                         }
@@ -85,4 +89,4 @@ const Humanista = (props) =>{
 )}
 
 export default Humanista
-export {Head } from '../components/Layout'
+export { Head } from '../components/Layout'

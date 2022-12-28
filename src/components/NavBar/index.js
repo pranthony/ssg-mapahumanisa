@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 
 const NavBar = () => {
@@ -19,17 +20,19 @@ const NavBar = () => {
             <nav className="header__nav">
                 <ul className="nav__menu flex">
                     <li className="menu__inicio tablink nav__item">
-                        <a href="/">Inicio</a>
+                        <a href='/mapahumanista'>Inicio</a>
                     </li>
 
                     <li className="tablink nav__item">
-                        <a href="/request"> Postula a tu humanista </a>
+                        <a href='/mapahumanista/request'>Postula a tu humanista</a>
+
+                    
                     </li>
 
                 </ul>
-                <form className="nav__form flex" action='/buscar' method='GET'>
+                <form className="nav__form flex" action='/mapahumanista/buscar' method='GET'>
                     <div>
-                        <div type="submit">
+                        <div>
                             <span className="material-symbols-outlined nav__buscar">
                                 search
                             </span>

@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import  Loader  from '../atoms/loaders'
 import  GalleryCharacters  from '../components/galleryCharacters'
 import Layout from '../components/Layout'
-import BASE_URL from '../config/constants'
+import {BASE_URL} from '../config/constants'
 
 
 const Buscar = (props) => {

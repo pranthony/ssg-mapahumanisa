@@ -85,6 +85,9 @@ a{
 .margin-50-auto{
     margin: 50px auto;
 }
+.margin-10-auto{
+    margin: 10px auto
+}
 
 .font-color{
 	color: var(--texto);
