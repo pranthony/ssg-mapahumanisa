@@ -98,7 +98,7 @@ a{
 }
 
 .header__portada {
-    background-image: url(../images/banner-festival-de-las-humanidades.jpg);
+    background-image: url("https://www.lavaperu.com/revistatxt/img/banner-festival-de-las-humanidades.jpg");
     background-position: center center;
     background-size: cover;
     padding: 25px 0px;
@@ -423,7 +423,7 @@ p{
     
 }
 #footer{
-    background-image: url("../images/footer.jpg");
+    background-image: url("https://www.lavaperu.com/revistatxt/img/footer.jpg");
     background-size: cover;
     background-position: center ;
     color: #42332e;

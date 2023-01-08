@@ -45,7 +45,6 @@ const MapaPeru = ({character, callback}) => {
   const [hovered, setHovered] = useState(null);
   const [position, setPosition] = useState({});
   const cityHover = useRef()
-  
   const layerProps = {
     onMouseEnter: ({ target }) => setHovered(target.attributes.name.value),
     onClick: ({ target }) =>  callback(target),

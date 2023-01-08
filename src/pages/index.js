@@ -3,6 +3,7 @@ import MapaPeru from '../components/MapaPeru'
 import GalleryCharacters from '../components/galleryCharacters'
 import Layout from "../components/Layout"
 import { BASE_URL, FILE_BASE_URL } from "../config/constants"
+import useVistCounter from "../hooks/hooks.js"
 
 const IndexPage = () => {
 
@@ -10,6 +11,8 @@ const IndexPage = () => {
   const [characters, setCharacters] = useState();
   const [character, setCharacter] = useState();
 
+  const { data } = useVistCounter()
+  
   useEffect(()=>{
     if(clicked) 
         fetch(BASE_URL+`/index.php/character/listByDepartment?name=${clicked}`)
@@ -67,16 +70,21 @@ const IndexPage = () => {
                     emprendimientos, elecciones).
                     </p>
                     <div className='flex flex-center'>
-                        
-
-                    <a className='inline-block'  href={FILE_BASE_URL+"/static/brochure.pdf"} target="_blank" rel="noreferrer">
-                        <button  className='flex' >
-                        <span>Mas información</span>
-                        <span className="material-symbols-outlined">
-                            menu_book
-                        </span>
+                    
+                        <a  className='inline-block' href={FILE_BASE_URL+"/static/brochure.pdf"} target="_blank" rel="noreferrer">
+                            <button  className='flex' >
+                            <span>Mas información</span>
+                            <span className="material-symbols-outlined">
+                                menu_book
+                            </span>
+                            </button>
+                        </a>
+                        <button className='flex ' disabled>
+                            <span>Visitas {data?.visits} </span>
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
                         </button>
-                    </a>
                         
                     </div>
                 </div>

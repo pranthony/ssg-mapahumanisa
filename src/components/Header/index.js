@@ -1,5 +1,4 @@
 import React from 'react'
-import brandImg from '../../images/Recurso 5.png'
 import '../../styles/index.css'
 import  NavBar  from '../NavBar'
 
@@ -9,7 +8,7 @@ const Header = () => {
 
     <div className="header__portada ">
         <a className="portada__brand flex" href="https://lavaperu.com/">
-            <img loading="lazy" src={brandImg} alt="Logo Lava" className="portada__logo h-100p"/>
+            <img loading="lazy" src="https://www.lavaperu.com/revistatxt/img/Recurso%205.png" alt="Logo Lava" className="portada__logo h-100p"/>
             <p className="portada__marca">
                 Laboratorio de <br/> Vanguardia <br/> Pedagógica
             </p> 
@@ -20,7 +19,7 @@ const Header = () => {
     </div>
         <NavBar />
     </header>
-  )
+  ) 
 }
 
 export default Header
